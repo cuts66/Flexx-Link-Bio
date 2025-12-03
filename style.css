@@ -158,8 +158,8 @@ h1 {
 
 .socials {
     display: flex;
-    gap: 20px;
-    max-width: 150px;
+    gap: 30px;
+    max-width: 200px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
