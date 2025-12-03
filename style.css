@@ -1,0 +1,326 @@
+/* ==== Fondo principal estilo Linktree ==== */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background: #000;
+    background-image: url("img/fondo.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    min-height: 100vh;
+    padding-top: 60px;
+    position: relative;
+}
+
+/* Oscurecer fondo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.25);
+    z-index: -1;
+}
+
+/* ==== Reset ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==== Contenedor ==== */
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Foto perfil */
+.profile-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border: 4px solid #d10607;
+}
+
+/* Nombre */
+h1 {
+    margin-top: 12px;
+    font-size: 24px;
+    color: #d10607;
+    font-weight: bold;
+}
+
+/* Descripción */
+.tagline {
+    font-size: 15px;
+    color: #e4e4e4;
+    margin-top: 4px;
+}
+
+/* ==== Botones ==== */
+.links {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* <-- todos los botones centrados */
+    gap: 12px;
+}
+
+.link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 340px;      /* <-- mismo ancho REAL para todos */
+    margin: 0 auto;        /* <-- centrado */
+    padding: 14px;
+    background: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    border: 2px solid white;
+    transition: 0.2s;
+    position: relative;
+}
+
+/* Centrar texto dentro del espacio restante */
+.link-btn .btn-text {
+    flex: 1;
+    margin-left: 10px;
+}
+
+/* Hover */
+.link-btn:hover {
+    background: #333;
+}
+
+/* Botón transparente */
+.transparent-btn {
+    background: transparent;
+    color: white;
+}
+
+.transparent-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Recuadro icono */
+.btn-icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.btn-icon img.btn-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==== Redes sociales ==== */
+.socials-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.socials a[href*="youtube.com"] img.icon {
+    transform: scale(1.3);
+    transition: 0.2s;
+}
+
+.socials a[href*="instagram.com"] img.icon {
+    transform: translateX(-3px);
+}
+
+.socials {
+    display: flex;
+    gap: 20px;
+    max-width: 150px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: inline-flex;
+    transition: 0.18s ease;
+}
+
+.social-link img.icon {
+    width: 28px;
+    height: 28px;
+}
+
+.social-link:hover img.icon {
+    transform: translateY(-1px);
+    opacity: 0.7;
+}
+
+/* ==== Kebab menu ==== */
+.btn-menu {
+    font-size: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    flex-shrink: 0;
+    color: white;
+    user-select: none;
+    position: relative;
+    transition: 0.2s;
+}
+
+.btn-menu:hover {
+    color: #ccc;
+}
+
+.btn-menu .dropdown {
+    display: none;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    background: black;
+    border: 1px solid white;
+    border-radius: 8px;
+    min-width: 100px;
+    flex-direction: column;
+    z-index: 5;
+}
+
+.btn-menu:hover .dropdown {
+    display: flex;
+}
+
+.btn-menu .dropdown a {
+    padding: 8px 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-menu .dropdown a:hover {
+    background: #333;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 480px) {
+
+    body {
+        padding-top: 40px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .profile-photo {
+        width: 130px;
+        height: 130px;
+    }
+
+    .link-btn {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .link-btn .btn-text {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .tagline {
+        font-size: 14px;
+    }
+
+    .socials {
+        max-width: 120px;
+        gap: 8px;
+    }
+
+    .social-link img.icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .btn-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .btn-menu {
+        font-size: 18px;
+    }
+
+    .btn-menu .dropdown a {
+        font-size: 13px;
+    }
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 4px 0;
+    background: transparent;
+    color: #aaa;
+    font-size: 13px;
+    position: fixed;
+    bottom: 25px;
+    left: 0;
+}
+
+.footer .cookie-link {
+    color: #4d4d4d;
+    text-decoration: underline;
+    margin-bottom: 15px;
+    transition: 0.2s;
+}
+
+.footer .cookie-link:hover {
+    color: #fff;
+}
+
+/* Texto flexx.com */
+.middle-text {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.middle-text a {
+    color: #000000;
+    text-decoration: underline;
+    transition: 0.2s;
+}
+
+.middle-text a:hover {
+    color: #fff;
+}
+
+
